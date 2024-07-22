@@ -1,8 +1,7 @@
-// Register.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext.jsx'; // Importar el contexto de tema
+import { useTheme } from '../context/ThemeContext.jsx';
 import google from '../assets/google.svg';
 import facebook from '../assets/facebook.svg';
 import twitter from '../assets/twitter.svg';
@@ -20,12 +19,12 @@ export default function Register() {
   const [passwordError, setPasswordError] = useState('');
   const [hasPasswordChanged, setHasPasswordChanged] = useState(false);
   const [emailError, setEmailError] = useState('');
-  const { isDarkMode, toggleDarkMode } = useTheme(); // Usar el contexto de tema
+  const { isDarkMode, toggleDarkMode } = useTheme();
   const navigate = useNavigate();
 
   const validatePassword = (password) => {
     if (password.length < 8 || !/[A-Z]/.test(password)) {
-      setPasswordError('La contraseña debe tener al menos 8 caracteres y una letra mayúscula.');
+      setPasswordError('The password must be at least 8 characters and one uppercase letter.');
       return false;
     }
     setPasswordError('');
@@ -47,7 +46,7 @@ export default function Register() {
     try {
       const response = await axios.post('http://localhost:3000/api/auth/check-email', { email });
       if (response.data.exists) {
-        setEmailError('El correo electrónico ya está registrado.');
+        setEmailError('Email is already registered.');
       } else {
         setEmailError('');
       }

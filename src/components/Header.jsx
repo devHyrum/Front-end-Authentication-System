@@ -36,9 +36,9 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
         });
         setUser(response.data);
 
-        // Check if there's a photo URL
+
         if (response.data.photoUser) {
-          // Fetch the image blob and create a URL
+
           const imageResponse = await axios.get(`http://localhost:3000/api/auth/image/${response.data.photoUser}`, {
             responseType: 'blob',
             headers: { Authorization: `Bearer ${token}` }
@@ -47,7 +47,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
           const imageUrl = URL.createObjectURL(imageBlob);
           setImageUrl(imageUrl);
         } else {
-          // Use default photoUser if no image is available
+
           setImageUrl(photoUser);
         }
       } catch (error) {
@@ -71,7 +71,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
       setTimeout(() => {
         setIsNavOpen(false);
         setIsAnimating(false);
-      }, 300); // Duración de la animación
+      }, 300);
     }
   };
 
@@ -105,11 +105,11 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
       setIsDarkMode(true);
     }
     document.addEventListener('mousedown', handleOutsideClick);
-    document.addEventListener('mousedown', handleOutNavClick); // Añadir el evento aquí
+    document.addEventListener('mousedown', handleOutNavClick); 
 
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
-      document.addEventListener('mousedown', handleOutNavClick); // Añadir el evento aquí
+      document.addEventListener('mousedown', handleOutNavClick); 
 
     };
   }, [setIsDarkMode]);

@@ -29,9 +29,9 @@ export default function Profile() {
         setBio(response.data);
         setPhoneNumber(response.data);
 
-        // Check if there's a photo URL
+
         if (response.data.photoUser) {
-          // Fetch the image blob and create a URL
+
           const imageResponse = await axios.get(`http://localhost:3000/api/auth/image/${response.data.photoUser}`, {
             responseType: 'blob',
             headers: { Authorization: `Bearer ${token}` }
@@ -40,7 +40,7 @@ export default function Profile() {
           const imageUrl = URL.createObjectURL(imageBlob);
           setImageUrl(imageUrl);
         } else {
-          // Use default photoUser if no image is available
+
           setImageUrl(photoUser);
         }
       } catch (error) {

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext'; // Importar el ThemeContext
+import { useTheme } from '../context/ThemeContext';
 import google from '../assets/google.svg';
 import facebook from '../assets/facebook.svg';
 import twitter from '../assets/twitter.svg';
@@ -18,7 +18,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  // Obtener valores y funciones del contexto de tema
+
   const { isDarkMode, toggleDarkMode  } = useTheme();
 
   const handleSubmit = async (e) => {
