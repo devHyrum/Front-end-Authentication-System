@@ -82,7 +82,7 @@ export default function Register() {
   const isFormValid = email && password && !passwordError && !emailError;
 
   return (
-    <div className="flex flex-col items-center justify-center bg-gray-100 dark:bg-customDark dark:text-white transition-colors duration-500 px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-customDark dark:text-white transition-colors duration-500 px-4">
       <button
         onClick={toggleDarkMode}
         className="absolute top-4 right-4 p-2 bg-gray-200 dark:bg-gray-600 rounded-full transition-colors duration-500"
