@@ -1,7 +1,7 @@
 # Front-end Authentication System
 ![mobile](./public/mobile.png)
 ![desktop](./public/desktop.png)
-Este repositorio contiene el frontend para un sistema de autenticación. La aplicación permite a los usuarios registrarse, iniciar sesión, y gestionar su perfil. Está construido con React y utiliza Tailwind CSS para los estilos.
+Este repositorio contiene el frontend para un sistema de autenticación. La aplicación permite a los usuarios registrarse, iniciar sesión, y gestionar su perfil. Está construido con React y utiliza Tailwind CSS para los estilos. Design fue extraído de **[Figma](https://www.figma.com/design/ZM0DPZbzK39o3rqwiaOPTD/Authentication-App?node-id=0-1&node-type=CANVAS&t=0BCcbhAvC6zVs1al-0)**
 
 ## Tabla de Contenidos
 
